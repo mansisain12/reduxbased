@@ -10,8 +10,14 @@ export const userListReducer = (state = initialState, action) => {
 
     case ActionTypes.UPDATE_USER:
       let userData = [...state.userList];
-      userData.splice(action.index, 1, action.payload);
+      userData.splice(action.index,1,action.payload);
       return {...state, userList: userData};
+
+    case ActionTypes.DELETE_USER:
+      // return {...state, userList: [...state.userList.filter((item) => item.index !== action.index)],}
+      let deleteData = [...state.userList];
+      deleteData.splice(action.index,1);
+      return {...state, userList: deleteData};
 
     default:
       return state;

@@ -10,3 +10,8 @@ export const updateUser = (user, index) => ({
   payload: user,
   index: index,
 });
+
+export const deleteUser = (item) => ({
+  type:ActionTypes.DELETE_USER,
+  payload:item
+})
